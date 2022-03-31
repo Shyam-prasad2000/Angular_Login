@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login" (ngSubmit)="login()" [formGroup]="loginForm">
+                <h1>Login</h1>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" formControlName="userid" name="userid" placeholder="User Id">
+				</div>
+				<div *ngIf="(this.loginForm.get('userid')?.touched||this.loginForm.get('userid')?.dirty)&&this.loginForm.get('userid')?.errors" style="color: red;">
+					Invalid Username
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" formControlName="password" name="password" placeholder="Password">
+				</div>
+				<div *ngIf="(this.loginForm.get('password')?.touched||this.loginForm.get('password')?.dirty)&&this.loginForm.get('password')?.errors" style="color: red;">
+					Invalid password
+				</div>
+			
+				<button class="button login__submit">
+					<span class="button__text">Log In Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+			</form>
+			<div class="social-login">
+				<a routerLink="register"><h3>New User</h3></a>
+
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
